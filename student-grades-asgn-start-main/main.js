@@ -107,19 +107,42 @@ function countBelow50() {
 function lowGradesTo50() {
   // Change all grades that are below 50 to be equal to 50.
   outputEl.innerHTML = "Change low grades to 50";
+
+  for (let i = 0; i < grades.length; i++) {
+    if (grades[i] < 50) {
+      grades[i] = 50;
+    }
+  }
 }
 
 function increaseGradesBy10() {
   // Increase each grade by 10%.
   outputEl.innerHTML = "Increase all grades by 10%";
+
+  for (let i = 0; i < grades.length; i++) {
+    grades[i] += (grades[i] / 100) * 10;
+  }
 }
 
 function decreaseGradesBy10() {
   // Decrease each grade by 10%.
   outputEl.innerHTML = "Decrease all grades by 10%";
+
+  for (let i = 0; i < grades.length; i++) {
+    grades[i] -= (grades[i] / 100) * 10;
+  }
 }
 
 function removeGradesBelow50() {
   // Remove all grades that are below 50.
   outputEl.innerHTML = "Remove grades below 50";
+
+  for (let i = 0; i < grades.length; i++) {
+    if (grades[i] < 50) {
+      grades.splice(i, 1);
+      i--;
+    }
+
+    console.log(grades);
+  }
 }
